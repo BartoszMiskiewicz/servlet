@@ -21,11 +21,15 @@ public class Server {
 
         Scanner scanner = new Scanner(socket.getInputStream());
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        String input = scanner.nextLine();
-        System.out.println("Received message:" + input);
-        writer.write(input + "pong\n");
-        System.out.println("Flushing output");
-        writer.flush();
+        Scanner scannerTouser  = new Scanner(System.in);
+        boolean flag = true;
+        while (flag) {
+            String input = scanner.nextLine();
+            System.out.println("Guest:" + input);
+            writer.write(scannerTouser.nextLine() + "\n");
+            System.out.println("Flushing output");
+            writer.flush();
+        }
 
         socket.close();
         serverSocket.close();
