@@ -14,7 +14,7 @@ public class Client {
     public static void main(String[] args) throws IOException {
 //        Socket socket = new Socket("localhost", 1234); - lokalnie
         //do danego uzytkownika pod IP
-        Socket socket = new Socket("192.168.100.106", 1234);
+        Socket socket = new Socket("localhost", 1234);
 
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         Scanner scanner = new Scanner(socket.getInputStream());

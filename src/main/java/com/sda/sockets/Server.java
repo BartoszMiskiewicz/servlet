@@ -31,6 +31,7 @@ public class Server {
             writer.flush();
         }
 
+
         socket.close();
         serverSocket.close();
     }
